@@ -20,6 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-3195296029072717"
+      />
       <GoogleAdsense pId="3195296029072717" />
     </head>
       <body className={`${inter.className} dark`}>
