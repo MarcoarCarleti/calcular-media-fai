@@ -18,17 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <body className={`${inter.className} dark`}>
+        {children}
+        <Analytics />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3195296029072717"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-      </head>
-      <body className={`${inter.className} dark`}>
-        {children}
-        <Analytics />
       </body>
     </html>
   );
