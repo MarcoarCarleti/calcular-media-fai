@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import GoogleAdsense from "./adsense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <head>
+      <GoogleAdsense pId="3195296029072717" />
+    </head>
       <body className={`${inter.className} dark`}>
         {children}
         <Analytics />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3195296029072717"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        
       </body>
     </html>
   );
