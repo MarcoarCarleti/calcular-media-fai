@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
-import GoogleAdsense from "./adsense";
 
 const inter = Inter({ subsets: ["latin"] });
 

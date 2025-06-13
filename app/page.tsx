@@ -10,7 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+// import Image from "next/image"; // Import não utilizado
+import AdUnit from "@/components/ui/ad-unit"; // Importe o novo componente
 import { useState } from "react";
 
 export default function Home() {
@@ -32,6 +33,16 @@ export default function Home() {
 
   return (
     <main className="bg-black flex bg-background min-h-screen flex-col items-center justify-center p-24 gap-4">
+      {/* Exemplo de Bloco de Anúncio no Topo */}
+      <AdUnit
+        adClient="ca-pub-3195296029072717" // Seu ID de Editor
+        adSlot="SEU_ID_DE_BLOCO_DE_ANUNCIO_1" // SUBSTITUA pelo ID do seu bloco de anúncio
+        adFormat="auto" // ou "leaderboard", "banner", etc.
+        fullWidthResponsive={true}
+        // Estilo opcional para o contêiner do anúncio
+        style={{ width: '100%', maxWidth: '728px', height: '90px' }}
+      />
+
       <Card className="w-[350px] bg-black h-[350px">
         <CardHeader>
           <CardTitle className="text-white">Calcular nota final FAI</CardTitle>
@@ -79,6 +90,15 @@ export default function Home() {
           <Button onClick={handleSubmitButtonClick}>Enviar</Button>
         </CardFooter>
       </Card>
+
+      {/* Exemplo de Bloco de Anúncio Abaixo do Card */}
+      <AdUnit
+        adClient="ca-pub-3195296029072717" // Seu ID de Editor
+        adSlot="SEU_ID_DE_BLOCO_DE_ANUNCIO_2" // SUBSTITUA por outro ID de bloco de anúncio
+        adFormat="auto" // ou "rectangle", etc.
+        // Estilo opcional para um anúncio retangular
+        style={{ width: '300px', height: '250px' }}
+      />
     </main>
   );
 }
